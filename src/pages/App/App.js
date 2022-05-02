@@ -2,7 +2,9 @@ import {useState} from "react";
 import AuthPage from "../AuthPage/AuthPage"
 import NewThread from "../NewThread/NewThread"
 import ThreadHistory from "../ThreadHistory/ThreadHistory"
+import NavBar from "../../components/Nav/NavBar";
 import {Routes, Route} from "react-router-dom"
+
 
 function App() {
 
@@ -19,7 +21,7 @@ const [user, setUser] = useState(null);
          <Route path="/threads" element={<ThreadHistory />} />
        </Routes>
       : 
-      <AuthPage />
+      <NavBar />
     }
 
    </main>
