@@ -1,9 +1,15 @@
-
+import NavBar from "../../components/Nav/NavBar"; 
+import Slider from "../../components/Carousel/Slider";
+import AuthPageCard from "../../components/AuthPageCard/AuthPageCard";
 
 
 
 export default function AuthPage(){
     return (
-        <h1>Auth Page</h1>
+        <>
+        <NavBar />
+        <Slider />
+        <AuthPageCard />
+        </>
     )
 }
