@@ -3,10 +3,18 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { logOut } from '../../utilities/users-service';
 
 
 
-export default function NavBar() {
+export default function NavBar({ user, setUser }) {
+
+  function handleLogOut() {
+    logOut();
+    setUser(null);
+  }
+
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
@@ -24,7 +32,7 @@ export default function NavBar() {
         </NavDropdown>
       </Nav>
       <Nav>
-        <Nav.Link href="/signout">Sign Out</Nav.Link>
+        <Nav.Link onClick={handleLogOut}>Sign Out</Nav.Link>
       </Nav>
     </Navbar.Collapse>
     </Container>

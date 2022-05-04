@@ -3,10 +3,10 @@ import Slider from "../../components/Carousel/Slider"
 
 
 
-export default function NewThread() {
+export default function NewThread( {user, setUser} ) {
     return (
         <>
-            <NavBar />
+            <NavBar user={user} setUser={setUser} />
             <Slider />
         </>
     )
