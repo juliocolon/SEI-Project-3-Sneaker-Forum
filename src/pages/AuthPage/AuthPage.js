@@ -4,10 +4,10 @@ import AuthPageCard from "../../components/AuthPageCard/AuthPageCard";
 
 
 
-export default function AuthPage(){
+export default function AuthPage( {setUser}){
     return (
         <>
-        <NavBar />
+        <NavBar setUser={setUser} />
         <Slider />
         <AuthPageCard />
         </>

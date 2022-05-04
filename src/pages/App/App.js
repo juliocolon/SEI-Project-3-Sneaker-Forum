@@ -1,26 +1,26 @@
-import {useState} from "react"; 
+import React, { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { getUser } from '../../utilities/users-service';
 import AuthPage from "../AuthPage/AuthPage"
 import NewThread from "../NewThread/NewThread"
 import ThreadHistory from "../ThreadHistory/ThreadHistory"
-import {Routes, Route} from "react-router-dom"
 
 
 function App() {
 
-const [user, setUser] = useState(null);
-
-
+const [user, setUser] = useState(getUser());
 
   return (
    <main className="App">
      {
        user ? 
          <Routes>
-         <Route path="/threads/new" element={<NewThread />} />
-         <Route path="/threads" element={<ThreadHistory />} />
+         <Route path="/threads/new" element={<NewThread user={user} setUser={setUser} />} />
+         <Route path="/threads" element={<ThreadHistory user={user} setUser={setUser} />} />
+         <Route path="/*" element={<Navigate to="/threads/new" />} />
        </Routes>
       : 
-      <AuthPage />
+      <AuthPage setUser={setUser} />
     }
 
    </main>
