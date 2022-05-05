@@ -1,6 +1,6 @@
 import NavBar from "../../components/Nav/NavBar"; 
 import Slider from "../../components/Carousel/Slider";
-import AuthPageCard from "../../components/AuthPageCard/AuthPageCard";
+import PageCard from "../../components/PageCard/PageCard";
 import Footer from "../../components/Footer/Footer"
 
 
@@ -10,7 +10,7 @@ export default function AuthPage( {setUser}){
         <>
         <NavBar setUser={setUser} />
         <Slider />
-        <AuthPageCard />
+        <PageCard />
         <footer>
             <Footer /> 
         </footer>

@@ -7,3 +7,12 @@
     font-weight: bold;
     font-size: larger;
 }
+
+.thread-form{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 50px;
+    width: 50%;
+}

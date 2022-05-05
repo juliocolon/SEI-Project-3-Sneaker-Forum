@@ -15,7 +15,7 @@ const Footer = () => {
       <h2 style={{ color: "#FFFFFF", 
                    textAlign: "center", 
                    marginTop: "-60px" }}>
-        Sneaker Forum
+       <img src="/sneaker.png" alt="sneaker-icon" />  Sneaker Forum
       </h2>
       <Container>
         <Row>

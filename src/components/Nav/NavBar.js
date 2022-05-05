@@ -99,7 +99,7 @@ console.log(this.state)
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/">Sneaker Forum</Navbar.Brand>
+            <Navbar.Brand href="/"> <img src="/sneaker.png" alt="sneaker-icon" /> Sneaker Forum</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>

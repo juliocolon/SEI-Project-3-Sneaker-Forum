@@ -15,9 +15,9 @@ const [user, setUser] = useState(getUser());
      {
        user ? 
          <Routes>
-         <Route path="/threads/new" element={<NewThread user={user} setUser={setUser} />} />
          <Route path="/threads" element={<ThreadHistory user={user} setUser={setUser} />} />
-         <Route path="/*" element={<Navigate to="/threads/new" />} />
+         <Route path="/threads/new" element={<NewThread user={user} setUser={setUser} />} />
+         <Route path="/*" element={<Navigate to="/threads" />} />
        </Routes>
       : 
       <AuthPage setUser={setUser} />
