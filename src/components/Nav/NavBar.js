@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import * as usersService from '../../utilities/users-service';
 
 
 
@@ -22,7 +23,10 @@ export default class NavBar extends Component {
     confirm: '',
     error: '',
     show: false,
-    login: false
+    login: false,
+    loginEmail: "", 
+    loginPassword: "", 
+    credentials: {email: "", password: ""}
   };
 
   handleShow = () => {
@@ -44,9 +48,9 @@ export default class NavBar extends Component {
    }
 
    handleChange = (evt) => {
-    this.setState({...this.state, [evt.target.name]: evt.target.value, error: '' })
-}
+    this.setState({...this.state, [evt.target.name]: evt.target.value})}
 
+ 
 
 handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -64,11 +68,33 @@ handleSubmit = async (evt) => {
 }
  
 
+ handleLoginSubmit = async (evt) => {
+  // Prevent form from being submitted to the server
+  evt.preventDefault();
+  try {
+    // The promise returned by the signUp service method
+    // will resolve to the user object included in the
+    // payload of the JSON Web Token (JWT)
+    console.log(this.state.loginEmail)
+    console.log(this.state.loginPassword)
+   
+    const user = await usersService.login({
+      email: this.state.loginEmail, 
+      password: this.state.loginPassword,
+
+    });
+    this.props.setUser(user);
+  } catch {
+    this.setState({error: 'Log In Failed'});
+  }
+}
+
+
 
   render() {
 
     const disable = this.state.password !== this.state.confirm; 
-
+console.log(this.state)
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -127,16 +153,16 @@ handleSubmit = async (evt) => {
             <Modal.Title>Log In</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form autoComplete='off' onSubmit={this.handleSubmit}>
+            <Form autoComplete='off' onSubmit={this.handleLoginSubmit}>
               <Form.Group className="mb-3" >
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" value={this.state.email} onChange={this.handleChange} name="email" autoFocus required />
+                <Form.Control type="email" value={this.state.loginEmail} onChange={this.handleChange} name="loginEmail" autoFocus required />
               </Form.Group>
               <Form.Group className="mb-3" >
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleChange}  required />
+                <Form.Control type="password" name="loginPassword" value={this.state.loginPassword} onChange={this.handleChange}  required />
               </Form.Group> 
-              <Button type="submit" disabled={disable} variant="secondary">
+              <Button type="submit" variant="secondary">
               Submit</Button>
             </Form>
           </Modal.Body>

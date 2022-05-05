@@ -7,7 +7,7 @@ import { logOut } from '../../utilities/users-service';
 
 
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ setUser }) {
 
   function handleLogOut() {
     logOut();
