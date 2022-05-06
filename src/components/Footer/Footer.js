@@ -15,7 +15,7 @@ const Footer = () => {
       <h2 style={{ color: "#FFFFFF", 
                    textAlign: "center", 
                    marginTop: "-60px" }}>
-       <img src="/sneaker.png" alt="sneaker-icon" />  Sneaker Forum
+       <img src="/sneaker.png" alt="sneaker-icon" />  <a href="/#top" style={{color:"#FFFFFF", textDecoration: 'none'}}>Sneaker Forum</a>
       </h2>
       <Container>
         <Row>

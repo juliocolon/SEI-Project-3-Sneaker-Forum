@@ -17,6 +17,7 @@ const [user, setUser] = useState(getUser());
          <Routes>
          <Route path="/threads" element={<ThreadHistory user={user} setUser={setUser} />} />
          <Route path="/threads/new" element={<NewThread user={user} setUser={setUser} />} />
+         <Route path="/threads/:id" />
          <Route path="/*" element={<Navigate to="/threads" />} />
        </Routes>
       : 

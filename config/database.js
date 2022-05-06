@@ -1,12 +1,14 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 
-const db = mongoose.connection;
+mongoose.connection
+.on('open', () => console.log('Connected to Mongoose'))
+.on('close', () => console.log('Disconnected from Mongoose'))
+.on('error', (error) => console.log(error))
 
-
-db.on('connected', () => {
-    console.log(`Connected to ${db.name} at ${db.host}:${db.port}`)
-});
-
-module.exports = mongoose
+module.exports = mongoose; 
