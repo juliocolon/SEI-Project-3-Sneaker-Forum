@@ -1,34 +1,67 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
-export default function AuthPageCard() {
-    return (
-        <Card>
-            <Card.Header><h4>Previous Threads</h4></Card.Header>
-            <Card.Body>
-                <Card.Title style={{textDecoration: "underline",fontSize: "22px", fontWeight: "bolder", color: "#778899"}}>The New Balance 550 Keeps It Simple In “White/Grey”</Card.Title>
+
+
+export default function NewThreadCard({user, refresh,setRefresh}) {
+
+
+
+  const [threads, setThreads] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get(`http://localhost:3000/threads/byuser/${user._id}`)
+        setThreads(data)
+        console.log(data)
+      } catch (err) {
+        console.log(err)
+      }
+    })()
+  }, [refresh])
+
+  return (
+
+    <Card>
+      {user.threads  === 0 ?
+         <Card.Header>No Previous Thread History</Card.Header>:
+         <Card.Header>Thread History</Card.Header>
+      }
+    
+      {
+  
+        threads.map((thread, index) => {
+          const { threadtitle, threadbody, brandcategory } = thread;
+          
+
+          return (
+            <Card key={index}>
+              
+              <Card.Body>
+                <Card.Title style={{ textDecoration: "underline", fontSize: "22px", fontWeight: "bolder", color: "#778899" }}> {threadtitle}</Card.Title>
                 <Card.Text>
-                  
+                Brand: {brandcategory}
                 </Card.Text>
-                <Button href="https://sneakernews.com/2022/05/04/new-balance-550-white-grey-bb550wtg/" target="_blank" variant="secondary">Read  More</Button>
-                <hr />
-            </Card.Body>
-            <Card.Body>
-                <Card.Title style={{textDecoration: "underline",fontSize: "22px", fontWeight: "bolder", color: "#778899"}}>The Nike Air Force 1 Mid Tries Out The “Reverse Panda” Look</Card.Title>
                 <Card.Text>
-               
+                  {threadbody}
                 </Card.Text>
-                <Button href=" https://sneakernews.com/2022/05/04/nike-air-force-1-mid-reverse-panda-dv2224-001/" target="_blank" variant="secondary">Read More</Button>
-                <hr />
-            </Card.Body>
-            <Card.Body>
-                <Card.Title style={{textDecoration: "underline",fontSize: "22px", fontWeight: "bolder", color: "#778899" }}>Mike Trout’s New Nike Signature Shoe Is Dropping In Several Colorways</Card.Title>
-                <Card.Text>
-                </Card.Text>
-                <Button href="https://sneakernews.com/2022/05/04/nike-force-zoom-trout-ltd-turf-release-date/" target="_blank" variant="secondary">Read More</Button>
-            </Card.Body>
-            </Card>
-            
-    )
+                <Button href={`/threads/${thread._id}`}  variant="secondary"> Edit Thread</Button>
+              </Card.Body>
+            </Card> 
+
+
+
+          )
+        })
+      }
+
+    </Card>
+  )
+
+
+
 }

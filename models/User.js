@@ -19,7 +19,8 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-  }
+  }, 
+  threads: [{type: mongoose.Schema.Types.ObjectId, ref: "Thread" }]
 }, {
   timestamps: true,
   toJSON: {

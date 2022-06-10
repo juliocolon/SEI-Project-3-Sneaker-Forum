@@ -5,15 +5,21 @@ import NewThreadCard from "../../components/NewThreadCard/NewThreadCard"
 
 
 
-export default function NewThread( {user, setUser} ) {
-    return (
-        <>
+export default function NewThread({ user, setUser, refresh, setRefresh }) {
+
+    
+return (
+    <div>
+
             <NavBar user={user} setUser={setUser} />
-            <ThreadForm />
-            <NewThreadCard />
+            <ThreadForm user={user} refresh={refresh} setRefresh={setRefresh}  />
+            <NewThreadCard user={user} refresh={refresh} setRefresh={setRefresh}/>
             <footer>
                 <Footer />
             </footer>
-        </>
-    )
-}
+     </div >    
+)
+
+    
+
+} 
