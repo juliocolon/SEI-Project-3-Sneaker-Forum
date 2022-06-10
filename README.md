@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Title: Sneakers Forum
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Sneaker Forum](https://github.com/juliocolon/SEI_CRUD_Application_Project-2/blob/main/public/images/Sneakers%20App.png)
 
-## Available Scripts
+## Technogies 
+MongoDB, Express, React, React Bootstrap, Node, JWT Authentication
 
-In the project directory, you can run:
+## Getting Started
+- Sneaker Forum, allows users to perform full CRUD operations on threads they create on different topics concerning sneakers. 
+- Users are able to sign up, log in and log out using JWT Authentication. 
 
-### `npm start`
+## Approach
+Began with building out the API, then foucused on implementing the UI using React Bootstrap. Transitioned to implementing the user schema, and JWT authentication. Implemented conditional rendering based on whether a user has logged in and whether or not a user has created a thread. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Site Link 
+[Sneaker Forum](https://sneakers-app-sei.herokuapp.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Next Steps
+- I would like to implement the ability for users to like or dislike a thread
+- Segment the threads according to brand category and allow users to view a specific set of threads according to brand 
+- Implement pagination
+- Allow users to comment on threads 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
