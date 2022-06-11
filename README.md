@@ -13,7 +13,7 @@ MongoDB, Express, React, React Bootstrap, Node, JWT Authentication
 Began with building out the API, then foucused on implementing the UI using React Bootstrap. Transitioned to implementing the user schema, and JWT authentication. Implemented conditional rendering based on whether a user has logged in and whether or not a user has created a thread. 
 
 ## Live Site Link 
-[Sneaker Forum](https://sneakers-app-sei.herokuapp.com/)
+[Sneaker Forum](https://sneakers-forum.herokuapp.com/threads)
 
 ## Next Steps
 - I would like to implement the ability for users to like or dislike a thread
