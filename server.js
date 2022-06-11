@@ -41,6 +41,6 @@ app.get('/*', function(req, res) {
 // development to avoid collision with React's dev server
 const PORT = process.env.PORT || 8000;
 
-app.listen(port, function() {
+app.listen(PORT, function() {
   console.log(`Express app running on port ${PORT}`)
 });
