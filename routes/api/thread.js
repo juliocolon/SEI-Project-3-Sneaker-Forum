@@ -6,7 +6,7 @@ const User = require('../../models/User')
 
 
 //INDEX 
-router.get("/", (req, res) => {
+router.get("https://sneakers-forum.herokuapp.com/", (req, res) => {
     Thread.find({}, (err, foundThreads) => {
         if (!err) {
             res.status(200).json(foundThreads)
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     })
 })
 
-router.get("/byuser/:id", async (req, res) => {
+router.get("https://sneakers-forum.herokuapp.com/byuser/:id", async (req, res) => {
     const user = await User.findById(req.params.id).populate("threads")
     res.json(user.threads)
 })
@@ -40,7 +40,7 @@ router.get("/byuser/:id", async (req, res) => {
 
 
 //CREATE
-router.post('/:id', async (req, res) => {
+router.post('https://sneakers-forum.herokuapp.com/:id', async (req, res) => {
     const { body } = req
     const thread = await Thread.create(body)
     if (thread) {
@@ -59,7 +59,7 @@ router.post('/:id', async (req, res) => {
 
 // //Update 
 
-router.put('/:id', (req, res) => {
+router.put('https://sneakers-forum.herokuapp.com/:id', (req, res) => {
     const { body } = req
 
     Thread.findByIdAndUpdate(req.params.id, body, { new: true }, (err, updatedThread) => {
@@ -78,7 +78,7 @@ router.put('/:id', (req, res) => {
 
 
 // DELETE
-router.delete("/:id", (req, res) => {
+router.delete("https://sneakers-forum.herokuapp.com/:id", (req, res) => {
     Thread.findByIdAndDelete(req.params.id, (err) => {
         console.log(Thread)
         if (!err) {
@@ -92,7 +92,7 @@ router.delete("/:id", (req, res) => {
 
 
 //SHOW
-router.get('/:id', (req, res) => {
+router.get('https://sneakers-forum.herokuapp.com/:id', (req, res) => {
     Thread.findById(req.params.id, (err, foundThread) => {
         if (!err) {
             res.status(200).json(foundThread)
