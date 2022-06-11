@@ -1,6 +1,6 @@
 # Title: Sneakers Forum
 
-![Sneaker Forum](https://github.com/juliocolon/SEI_CRUD_Application_Project-2/blob/main/public/images/Sneakers%20App.png)
+![Sneaker Forum](https://github.com/juliocolon/SEI-Project-3-Sneaker-Forum/blob/main/public/images/site.png)
 
 ## Technogies 
 MongoDB, Express, React, React Bootstrap, Node, JWT Authentication
